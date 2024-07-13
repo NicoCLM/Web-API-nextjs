@@ -2,12 +2,6 @@ import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import { getCharacters, Character } from "@/model/character";
 
-export async function getCharacterData() {
-  const response = await fetch(`https://rickandmortyapi.com/api/character`);
-  const data = await response.json();
-  console.log(data);
-  return data;
-}
 
 export default async function Home() {
   const data = await getCharacters();
