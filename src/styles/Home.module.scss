@@ -1,8 +1,9 @@
 $color-primary: hsl(142, 59%, 77%);
 .main{
-    padding: 2px;
+    padding: 10px;
     background-color: $color-primary;
     text-align: center;
+    image-rendering: auto;
 }
 
 .welcomeTitle{

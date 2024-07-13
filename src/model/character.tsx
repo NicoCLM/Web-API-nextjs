@@ -8,7 +8,7 @@ interface originChar{
     url: string
 }
 
-interface Character {
+export interface Character {
     id:number;
     name:string;
     status:string;
@@ -23,7 +23,7 @@ interface Character {
     created:string;
 };
 
-interface Location {
+export interface Location {
     id:number;
     name:string;
     type:string;
@@ -33,7 +33,7 @@ interface Location {
     created:string;
 };
 
-interface Episode {
+export interface Episode {
     id:number;
     name:string;
     air_date:string;
@@ -43,10 +43,8 @@ interface Episode {
     created:string;
 };
 
-
-
 export const getCharacters = async(): Promise<any[]> =>{
-    const response = await fetch(`https://rickandmortyapi.com/api/character`);
+    const response = await fetch(`https://rickandmortyapi.com/api/character/`);
     const data = await response.json();
     console.log(data);
     return data;
