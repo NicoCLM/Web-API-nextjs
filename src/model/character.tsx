@@ -1,9 +1,9 @@
-interface locationChar{
+export interface locationChar{
     name: string;
     url: string;
 }
 
-interface originChar{
+export interface originChar{
     name: string;
     url: string
 }
