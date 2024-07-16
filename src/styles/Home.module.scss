@@ -1,10 +1,4 @@
 $color-primary: hsl(142, 59%, 77%);
-.main{
-    padding: 10px;
-    background-color: $color-primary;
-    text-align: center;
-    image-rendering: auto;
-}
 
 .welcomeTitle{
     font-family:Arial, Helvetica, sans-serif;
@@ -26,6 +20,7 @@ $color-primary: hsl(142, 59%, 77%);
     margin: 3rem;
 
     list-style: none;
+    color: #f00000;
     
 }
 
@@ -35,8 +30,8 @@ $color-primary: hsl(142, 59%, 77%);
     padding: 1.5 rem;
     border: 1px solid #f00000;
     text-align: left;
-    color: inherit;
+    color: black;
     text-decoration: none;
     border-radius: 11px;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    background-color: aqua;
 }

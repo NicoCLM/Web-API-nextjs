@@ -1,4 +1,16 @@
 $background-color: hsl(108, 7%, 86%);
+html,
 body {
     background-color: $background-color;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
 }
