@@ -1,21 +1,24 @@
+import Header from "@/components/Header";
 
-
-async function getCharacterById(charId: number){
-    const response = await fetch(`https://rickandmortyapi.com/api/character/${charId}`, {
-        method: "GET",
-        next: {
-            revalidate: 5000,
-        },
-    });
-};
-
+async function getDataById(id: number) {
+    const res = await fetch(
+        `https://rickandmortyapi.com/api/character/${id}`
+    );
+    return res.json();
+}
 
 export default async function CharacterID({ params }: any) {
-    const character = await getCharacterById(params.id);
+    const {id, name, status, species, type, gender,image, origin, location} = await getDataById(params.id);
     return (
-        <main>
-            <h1>{params.id}</h1>
-            <p>{params.name}</p>
-        </main>
-    )
+        <div>
+            <h1 key={id}>Nombre: {name}</h1>
+            <img src={image} width={300} height={300} alt="profile" />
+            <p>Estado: {status}</p>
+            <p>Especie: {species}</p>
+            <p>Tipo: {type}</p>
+            <p>Genero: {gender}</p>
+            <p>Origen: {origin.name}</p>
+            <p>Ubicacion: {location.name}</p>
+        </div>
+    );
 }
