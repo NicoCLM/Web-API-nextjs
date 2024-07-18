@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Header from "@/components/Header";
 
 async function getData(page: number) {
   const res = await fetch(
@@ -20,15 +21,25 @@ export default function Home() {
 
   return (
     <div>
-      {results.map((item: any) => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <Link href={`/character/${item.id}`}>
-          <img src={item.image} alt={item.name} />
-          </Link>
-        </div>
-      ))}
+      <Header />
       <div>
+        <h2>Lista de Personajes</h2>
+      </div>
+      <div className="buttons">
+        <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
+        <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+      </div>
+      <div className="grid">
+        {results.map((item: any) => (
+          <div className="columns" key={item.id}>
+            <Link className="linkText" href={`/character/${item.id}`}>
+              <img src={item.image} width="200" height="200" alt={item.name} />
+              <p>{item.name} <br />{item.status} <br /><br />Ubicacion: <br />{item.location.name}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+      <div className="buttons">
         <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
         <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
       </div>
