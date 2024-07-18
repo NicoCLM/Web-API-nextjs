@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Link from "next/link";
 
 async function getDataById(id: number) {
     const res = await fetch(
@@ -19,6 +19,7 @@ export default async function CharacterID({ params }: any) {
             <p>Genero: {gender}</p>
             <p>Origen: {origin.name}</p>
             <p>Ubicacion: {location.name}</p>
+            <Link href={"/"}>Volver</Link>
         </div>
     );
 }
