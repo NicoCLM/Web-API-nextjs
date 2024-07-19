@@ -1,0 +1,23 @@
+$fontColor: hsl(0, 0%, 100%);
+$background: hsl(223, 16%, 35%);
+$charBackground: hsl(0, 0%, 0%);
+
+.charDetail{
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    color: $fontColor;
+    border: 5px dotted hsl(223, 29%, 64%);
+    background: $background;
+}
+
+.charDetail p {
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: $fontColor;
+    background: $charBackground ;   
+    border-width: 2px;
+    
+    
+}

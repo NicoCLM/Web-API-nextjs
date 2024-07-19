@@ -31,7 +31,7 @@ export default function SearchResult() {
     <div>
       <Header/>
       <div className="searchbar">
-        <input placeholder={"..."} type="text" value={charName} onChange={e => {e.preventDefault(); setCharName(e.target.value)}} />
+        <input placeholder={"Buscar personaje..."} type="text" value={charName} onChange={e => {e.preventDefault(); setCharName(e.target.value)}} />
       </div>
       <div>
         <h2>Lista de Personajes</h2>
@@ -41,7 +41,7 @@ export default function SearchResult() {
         <button onClick={() => setCurrentPage(currentPage + 1)}>Siguiente</button>
       </div>
       <div className="grid">
-        {results.map((item: any) => (
+        {results?.map((item: any) => (
           <div className="columns" key={item.id}>
             <Link className="linkText" href={`/character/${item.id}`}>
               <img src={item.image} width="200" height="200" alt={item.name} />

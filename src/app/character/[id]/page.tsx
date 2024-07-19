@@ -10,8 +10,8 @@ async function getDataById(id: number) {
 export default async function CharacterID({ params }: any) {
   const { id, name, status, species, type, gender, image, origin, location } = await getDataById(params.id);
   return (
-    <div>
-      <h1 key={id}>Nombre: {name}</h1>
+    <div className="charDetail">
+      <h1 key={id}>{name}</h1>
       <img src={image} width={300} height={300} alt="profile" />
       <p>Estado: {status}</p>
       <p>Especie: {species}</p>
