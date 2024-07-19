@@ -4,30 +4,35 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-async function getData(page: number) {
+
+
+async function getData(page: number, query: string) {
   const res = await fetch(
-    `https://rickandmortyapi.com/api/character/?page=${page}`
+    `https://rickandmortyapi.com/api/character/?name=${query}&page=${page}`
   );
   return res.json();
 }
 
-
-export default function Home() {
+export default function SearchResult() {
+  const [charName, setCharName] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [results, setResults] = useState([]);
-
-  useEffect(() => {
-    getData(currentPage).then((data) => setResults(data.results));
-  }, [currentPage]);
+  try {
+    useEffect(() => {
+      getData(currentPage, charName).then((data) => setResults(data.results));
+      
+    }, [currentPage, charName]);
+  } catch (error) {
+    console.log(error)
+  }
 
 
   return (
     <div>
       <Header/>
-      <form className="searchbar">
-          <input placeholder="..." type="text" name="" id="" />
-          <button type="submit">Buscar</button>
-      </form>
+      <div className="searchbar">
+        <input placeholder={"..."} type="text" value={charName} onChange={e => {e.preventDefault(); setCharName(e.target.value)}} />
+      </div>
       <div>
         <h2>Lista de Personajes</h2>
       </div>
