@@ -23,6 +23,7 @@ body {
     font-size: 25px;
     text-decoration: none;
     color: $fontColor;
+    
 }
 .columns{
     display: flex;
@@ -33,16 +34,107 @@ body {
     background: $charsColor;
 }
 
+.columns p {
+    padding-left: 75px;
+    font-weight: 100;
+}
+
 .welcomeTitle{
     color: $titleColor;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 80px;
+    font-size: 90px;
     text-align: center;
-    padding: 100px;
+    padding: 150px;
 
+}
+
+.welcomeTitle p {
+    font-size: 30px;
 }
 
 .searchbar{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
+    text-align: center;
+}
+
+.searchbar input{
+    width: 30%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    margin: 9px 0;
+    border: none;
+    background-color: $background;
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    color: $fontColor;
+}
+
+.searchbar button{
+    background-color: hsl(0, 6%, 16%);
+    padding: 15px 32px;
+    display: inline-block;
+    text-align: center;
+    color: $fontColor;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    font-size: 16px;
+    margin: 4px 10px;
+    border-radius: 10px;
+}
+
+.searchbar button:hover{
+    background-color: hsl(0, 0%, 70%);
+    color: black;
+}
+
+
+
+.buttons{
+    text-align: center;
+}
+
+.buttons button{
+    background-color: hsl(0, 6%, 16%);
+    padding: 15px 32px;
+    display: inline-block;
+    text-align: center;
+    color: $fontColor;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    font-size: 16px;
+    margin: 4px 10px;
+    border-radius: 10px;
+}
+
+.buttons button:hover{
+    background-color: hsl(0, 0%, 70%);
+    color: black;
+}
+
+h2{
+    border-radius: 60px;
+    text-align: center;
+    background-color: hsl(0, 7%, 11%);
+    color: $fontColor;
+    padding: 50px;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+}
+
+.endPage{
+    background-color: hsl(0, 5%, 4%);
+    color: $fontColor;
+    padding: 30px;
+    margin: 0px 0px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.grid{
+    border-radius: 20px;
+    background-color: hsl(0, 7%, 23%);
 }

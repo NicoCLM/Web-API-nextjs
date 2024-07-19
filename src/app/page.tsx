@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 async function getData(page: number) {
   const res = await fetch(
@@ -19,15 +20,20 @@ export default function Home() {
     getData(currentPage).then((data) => setResults(data.results));
   }, [currentPage]);
 
+
   return (
     <div>
-      <Header />
+      <Header/>
+      <form className="searchbar">
+          <input placeholder="..." type="text" name="" id="" />
+          <button type="submit">Buscar</button>
+      </form>
       <div>
         <h2>Lista de Personajes</h2>
       </div>
       <div className="buttons">
-        <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
-        <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+        <button onClick={() => setCurrentPage(currentPage - 1)}>Anterior</button>
+        <button onClick={() => setCurrentPage(currentPage + 1)}>Siguiente</button>
       </div>
       <div className="grid">
         {results.map((item: any) => (
@@ -40,9 +46,11 @@ export default function Home() {
         ))}
       </div>
       <div className="buttons">
-        <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
-        <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+        <button onClick={() => setCurrentPage(currentPage - 1)}>Anterior</button>
+        <button onClick={() => setCurrentPage(currentPage + 1)}>Siguiente</button>
       </div>
+      <br />
+      <Footer />
     </div>
   );
 }
